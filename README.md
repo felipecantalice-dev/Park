@@ -3,12 +3,13 @@
 Sistema de um parque de brinquedo, contendo diversos brinquedos, cada um com uma certa recompensa em pontos, que pode ser trocado por recompensa.
 
 ## O que deve ser feito
-
 * Cadastro ou login de clientes na entrada
 * Armazenar os pt's de clientes
 * Historico de jogos
 * Vendas de credito
 * Historico de trocas
+
+
 ## Custo
 
 ### Crédito
