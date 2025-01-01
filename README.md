@@ -47,3 +47,24 @@ Sistema de um parque de brinquedo, contendo diversos brinquedos, cada um com uma
 * Urso - 7.000 pt
 * Flauta - 3.000 pt
 ...
+
+
+
+## Comandos de busca
+
+```sql
+-- Buscar funcionarios
+SELECT id, nome, cpf FROM cliente
+	WHERE id IN (SELECT idCliente FROM funcionario);
+    
+-- Buscar todos os brinquedos
+SELECT id, nome FROM brinquedo;
+
+-- Buscar as pontuações de determinado brinquedo
+SELECT idBrinquedo, ordem, pontuacao, credito 
+	FROM brinquedo_pontuacao
+	WHERE idBrinquedo = 1 
+	ORDER BY ordem ASC;
+
+
+```
