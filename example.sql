@@ -1,5 +1,5 @@
 -- Entidades
-CREATE TABLE IF NOT EXISTS cliente(
+CREATE TABLE cliente(
     id INTEGER NOT NULL AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
     email VARCHAR(120) NOT NULL,
@@ -9,20 +9,20 @@ CREATE TABLE IF NOT EXISTS cliente(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS funcionario(
+CREATE TABLE funcionario(
     id INTEGER NOT NULL AUTO_INCREMENT,
     idCliente INTEGER NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY (idCliente) REFERENCES cliente(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS brinquedo(
+CREATE TABLE brinquedo(
     id INTEGER NOT NULL AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS brinquedo_pontuacao(
+CREATE TABLE brinquedo_pontuacao(
     id INTEGER NOT NULL AUTO_INCREMENT,
     idBrinquedo INTEGER,
     ordem INTEGER NOT NULL,
@@ -32,13 +32,13 @@ CREATE TABLE IF NOT EXISTS brinquedo_pontuacao(
     FOREIGN KEY (idBrinquedo) REFERENCES brinquedo(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS tipo_credito(
+CREATE TABLE tipo_credito(
     id INTEGER NOT NULL AUTO_INCREMENT,
     credito VARCHAR(15) NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS historico_credito(
+CREATE TABLE historico_credito(
     id INTEGER NOT NULL AUTO_INCREMENT,
     idFuncionario INTEGER,
     idCliente INTEGER,
@@ -95,3 +95,5 @@ INSERT INTO tipo_credito (id, credito) VALUES
 INSERT INTO historico_credito (id, idFuncionario, idCliente, idTipoCredito, credito, data) VALUES
 (1, 1, 1, 1, 100, '2025-01-01 13:00:00'),
 (2, 2, 2, 2, 200, '2025-01-01 14:00:00');
+
+
